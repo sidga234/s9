@@ -1,0 +1,77 @@
+﻿<h1>{{title}}</h1>
+<h3>{{title}} book information</h3>
+<hr />
+<form [formGroup]="bookForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Book Name</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="bookName">
+        </div>
+        <!--<span class="text-danger" *ngIf="bookname.invalid && formDir.submitted">
+            Book Name is required.
+        </span>-->
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Author Name</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="authorName">
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Price</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="price">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Publisher</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="publisher">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Date of purchase</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="dateOfPurchase">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Class</label>
+        <div class="col-md-4">
+            <select formControlName="class">          
+                    <option *ngFor="let class of classlist" value={{class.classId}}>{{class.class}}</option>
+                </select>
+</div>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Types</label>
+        <div class="col-md-4">
+            <select formControlName="type">
+                <option *ngFor="let type of typelist" value={{type.typeId}}>{{type.type}}</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12">Languages</label>
+        <div class="col-md-4">
+            <select formControlName="language">
+                <option *ngFor="let language of languagelist" value={{language.languageId}}>{{language.language}}</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+    </div>
+</form>

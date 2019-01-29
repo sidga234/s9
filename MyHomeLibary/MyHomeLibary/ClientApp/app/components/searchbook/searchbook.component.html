@@ -1,0 +1,25 @@
+﻿<!--<h1>{{title}}</h1>-->
+<!--<h3>{{title}} book information</h3>-->
+<h1>{{result}}  Search</h1>
+<hr />
+
+<!--<div class="form-group row">
+    <label class=" control-label col-md-12">Enter the Book Name for search</label>
+    <div class="col-md-4">
+        <input class="form-control" type="text" [(ngModel)]="bookname">
+    </div>
+
+</div>-->
+
+<div class="input-group input-group-md">
+    <span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>
+    <input #input1 type="text" class="form-control" placeholder="Enter the Book Name for search" aria-describedby="sizing-addon1">
+</div>
+
+<br/><br />
+
+<div class="form-group">
+    <!--<button type="submit" class="btn btn-primary" (click)="search($event)">Search</button>-->
+    <button (click)="onClick(input1.value)" type="button" class="btn btn-primary">Search</button>
+    <button class="btn" (click)="cancel()">Cancel</button>
+</div>
